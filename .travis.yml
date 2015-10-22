@@ -1,0 +1,15 @@
+language: ruby
+sudo: false
+rvm:
+- 2.2.3
+- 2.1.7
+- 2.0.0
+- 1.9.3
+env:
+- CHEF_VERSION=11.6.0.5
+- CHEF_VERSION=12.2.1
+before_script: bundle exec berks install
+script: bundle exec strainer test --except kitchen
+notifications:
+  slack:
+    secure: N4xKBoshXXGqfrDn3/2/l3I254Db3Uu7Q1EEaXiji8/lPwyYTWLaKYNuDzDiBftIl07ZL6VJfX0AsvxAetNELUv4xau30anQ/BiUEa/WDPTdayLpkZHs4xy4EEet5hAB5hBxxqJPGJoWJtMRD9BhLIXkuifD0z55pRsP7aPYcf1sLlyM9TFjtjMt+40UDR1hD5NRxp+Nj61ahGZWlNwitxa2Wyo4h45P4FjSA0wDtNeynCRCvpqfjwvIPTld5MGQFOQTEe7fh2Vwgv52eEF0q1f5Zz0CkcHN90WwGn4UD8F+qnCiBBd2EkbImh0eOcpk9QMPsvLJ2gBbz5ELadGlLqV0MrgE8kxSPQ7uxTObkeRPTEKnE8mLO/wfe6qHFEilnfwdKWF5UA4fivOkh5TCxtFVlFeAD6bkRLAuXYtrZgCU+PYN0IhSUSDexrQK1B3fGxbTJhHE8yHiYU8GY+Ri0vW4W/AYbdnErnImaZUkWwJna+Ryhm3utjjWqa8kIVjlRDhdQVN0mMx9iU4OX/N4YeSUVJ5q5bZwK3ojFF7ZnGdU0WmoYPpqyS+4M4r8corOE/gqmcM2ekghlQGfHNFrtsLOZHRlmGnx6TiK8Smx3uRSe408qiUoPr9KEXdW/TotYQkFq3KHHQzrbkmI1md6TxyspYSMT49wmjncQ6Xw1NY=
